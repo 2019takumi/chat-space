@@ -32,8 +32,8 @@ Things you may want to cover:
 |created_at|data||
 
 ### Association
--has_many :groups_users
--has_many :messeage
+- has_many :groups_users
+- has_many :messeage
 
 ## messageテーブル
 |Column|Type|options|
@@ -44,8 +44,8 @@ Things you may want to cover:
 |created_at|data||
 
 ### Association
--belongs_to :user
--belongs_to :group
+- belongs_to :user
+- belongs_to :group
 
 ## groupテーブル
 |Colum|Type|options|
@@ -54,8 +54,8 @@ Things you may want to cover:
 |created_at|data||
 
 ### Association
--has_many :groups_users
--has_many :message
+- has_many :groups_users
+- has_many :message
 
 ## groups_users テーブル
 |Colum|Type|options|
@@ -64,5 +64,5 @@ Things you may want to cover:
 |user_id|integer|foreign_key: key|
 
 ### Association
--belongs_to :group
--belongs_to :user
+- belongs_to :group
+- belongs_to :user
