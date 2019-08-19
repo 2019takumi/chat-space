@@ -23,45 +23,45 @@ Things you may want to cover:
 
 * ...
 
-## userテーブル
+## usersテーブル
 |Column|Type|options|
 |------|----|-------|
-|user_name|string|nul: false|
+|name|string|nul: false, index :true|
 |email|string|nul:false|
 |password|string|nul:false|
-|created_at|data||
 
 ### Association
 - has_many :groups_users
-- has_many :messeage
+- has_many :messeages
+- has_many :groups, through: :groups_users
 
-## messageテーブル
+## messagesテーブル
 |Column|Type|options|
 |------|----|-------|
-|message|string|nul: false|
-|user_id|integer|foreign_key: true|
-|group_id|integer|foreign_key: true|
-|created_at|data||
+|text|text||
+|image|string||
+|user|references|null :false, foreign_key: true|
+|group|references|null :false, foreign_key: true|
 
 ### Association
 - belongs_to :user
 - belongs_to :group
 
-## groupテーブル
+## groupsテーブル
 |Colum|Type|options|
 |-----|----|-------|
-|group_name|string|nul:false|
-|created_at|data||
+|name|string|nul:false|
 
 ### Association
 - has_many :groups_users
-- has_many :message
+- has_many :messages
+- has_many :users, through: :groups_users
 
 ## groups_users テーブル
 |Colum|Type|options|
 |-----|----|-------|
-|group_id|integer|foreign_key: true|
-|user_id|integer|foreign_key: key|
+|group_id|references|foreign_key: true|
+|user_id|references|foreign_key: key|
 
 ### Association
 - belongs_to :group
