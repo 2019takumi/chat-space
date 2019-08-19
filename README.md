@@ -60,8 +60,8 @@ Things you may want to cover:
 ## groups_users テーブル
 |Colum|Type|options|
 |-----|----|-------|
-|group_id|references|foreign_key: true|
-|user_id|references|foreign_key: key|
+|group|references|null :false, foreign_key: true|
+|user|references|null :false, foreign_key: key|
 
 ### Association
 - belongs_to :group
