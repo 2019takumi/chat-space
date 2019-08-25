@@ -35,13 +35,13 @@
           %p.message__upper-info__date 2019/08/23(Fri)14:02:06
         %p.message__text test
     .form
-      %form.new_message#new_message{:action =>'/',:method=>'get'}
+      %form.new_message#new_message{action: '/',method: 'get'}
         %input{:type=>"hidden"}
         %input{:type=>"hidden"}
         .input-box
-          %input.input-box__text#message_content{:placeholder=>'type a message',:type=>'text',:name=>'message[content]'}
-          %label.input-box__image{:for=>'message_image'}
+          %input.input-box__text#message_content{placeholder: 'type a message',type: 'text',name: 'message[content]'}
+          %label.input-box__image{for: 'message_image'}
             %i.fa.fa-image
-            %input.input-box__image__file{:type=>'file',:name=>'message[image]'}
-        %input.submit-btn{:type=>'submit', :value=>'Send',:name=>'commit'}
+            %input.input-box__image__file{type: 'file',name: 'message[image]'}
+        %input.submit-btn{type: 'submit', value: 'Send',name: 'commit'}
 

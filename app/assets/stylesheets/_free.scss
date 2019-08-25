@@ -21,23 +21,25 @@ a{
   width: 300px;
   color: $saidWhiteColor;
   float: left;
-  .side-header{
+  .side-header {
     background-color: #253141;
     height: 100px;
     display: flex;
     align-items: center;
     padding: 0 20px;
-  }
-  .side-header__box{
+  
+    & .side-header__box {
       display: flex;
       justify-content: space-between;
       width: 100%;
       font-weight: bold;
-  }
-  .side-header__box__menu{
-    display: flex;
-    li{
-      margin-left: 0.3rem;
+    }
+  
+    & .side-header__box__menu{
+      display: flex;
+      li{
+        margin-left: 0.3rem;
+      }
     }
   }
   .groups{
@@ -45,18 +47,18 @@ a{
     background-color: #2f3e51;
     padding: 20px 20px 0;
     overflow: scroll;
-    .group{
+    & .group{
       margin-bottom: $manyusesize;
     }
-    .group__group-name{
+    & .group__group-name{
       font-size: 15px;
       margin-bottom: 5px;
     }
-    .group__latest-message{
+    & .group__latest-message{
       font-size: 11px;
     }
   }
-  a{
+  & a{
     color: $saidWhiteColor;
   }
 }
@@ -71,55 +73,56 @@ a{
     justify-content: space-between;
     border-bottom: solid 1px #eee;
     overflow: scroll;
-    a {
+    & a {
       color: $actionColor;
     }
-  }
-  .main-header__left-box{
-    margin-top: 35px;
-  }
-  .main-header__left-box__current-group{
-    font-size: 20px;
-    color: #333;
-    margin-bottom: 15px;
-  }
-  .main-header__left-box__member-list{
-    display: flex;
-    font-size: 12px;
-    color: $usernameColor;
-  }
-  .main-header__edit-btn{
-    height: $manyusesize;
-    line-height: $manyusesize;
-    padding: 0 20px;
-    margin-top: 30px;
-    border: solid 1px $actionColor;
-    position:absolute;
-    right: $manyusesize;
+  
+    & .main-header__left-box{
+      margin-top: 35px;
+    }
+    & .main-header__left-box__current-group{
+      font-size: 20px;
+      color: #333;
+      margin-bottom: 15px;
+    }
+    & .main-header__left-box__member-list{
+      display: flex;
+      font-size: 12px;
+      color: $usernameColor;
+    }
+    & .main-header__edit-btn{
+      height: $manyusesize;
+      line-height: $manyusesize;
+      padding: 0 20px;
+      margin-top: 30px;
+      border: solid 1px $actionColor;
+      position:absolute;
+      right: $manyusesize;
+    }
   }
   .messages{
     height: calc(100vh - 190px);
     padding: 46px $manyusesize;
     background-color: #fafafa;
     overflow: scroll;
-    .message{
-      padding-bottom: $manyusesize;
+    & .message{
+        padding-bottom: $manyusesize;
     }
-    .message__upper-info{
+    & .message__upper-info{
       display: flex;
       margin-bottom: 10px;
     }
-    .message__upper-info__talker{
+    & .message__upper-info__talker{
       color: $messegesColor;
       font-size: 16px;
       font-weight: bold;
     }
-    .message__upper-info__date{
+    & .message__upper-info__date{
       color: $usernameColor;
       font-size: 12px;
       margin-left: 10px;
     }
-    .message__text{
+    & .message__text{
       color: #434a54;
       font-size: 14px;
       margin-bottom: 10px;
@@ -129,27 +132,27 @@ a{
     height: 90px;
     padding: 20px $manyusesize;
     background-color: #ddd;
-    form{
+    & form{
       display: flex;
-      .input-box{
+      & .input-box{
         position: relative;
         width: 100%;
       }
-      .input-box__text{
+      & .input-box__text{
         height: 50px;
         width: 100%;
         padding: 0 $manyusesize 0 10px;
         color: $messegesColor;
         border-style: none;
       }
-      .input-box__image{
+      & .input-box__image{
         font-size: 1.3rem;
         position: absolute;
         top: 10px;
         right: 10px;
         cursor: pointer;
       }
-      .submit-btn{
+      & .submit-btn{
         width: 100px;
         height: 50px;
         padding: 0 30px;
@@ -158,7 +161,7 @@ a{
         color: white;
         cursor: pointer;
       }
-      .input-box__image__file{
+      & .input-box__image__file{
         display: none;
       }
     }
