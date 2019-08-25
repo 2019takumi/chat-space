@@ -1,0 +1,47 @@
+.flash-box
+
+.wrapper
+  .chat-side
+    .side-header
+      .side-header__box
+        %p.side-header__box__user-name takumi
+        %ul.side-header__box__menu<
+          %li.side-header__box__menu__new-group
+            = link_to do
+              = fa_icon 'edit'
+          %li.side-header__box__menu__eidt-user
+            = link_to do
+              = fa_icon 'cog'
+    .groups
+      = link_to do
+        .group
+          %p.group__group-name test
+          %p.group__latest-message test
+
+  .chat-main
+    .main-header
+      .main-header__left-box
+        %h2.main-header__left-box__current-group test
+        %ul.main-header__left-box__member-list
+          Menber :
+          %li.main-header__left-box__member-list__member takumi
+      = link_to do
+        .main-header__edit-btn Edit
+
+    .messages
+      .message
+        .message__upper-info
+          %p.message__upper-info__talker takumi
+          %p.message__upper-info__date 2019/08/23(Fri)14:02:06
+        %p.message__text test
+    .form
+      %form.new_message#new_message{action: '/',method: 'get'}
+        %input{:type=>"hidden"}
+        %input{:type=>"hidden"}
+        .input-box
+          %input.input-box__text#message_content{placeholder: 'type a message',type: 'text',name: 'message[content]'}
+          %label.input-box__image{for: 'message_image'}
+            %i.fa.fa-image
+            %input.input-box__image__file{type: 'file',name: 'message[image]'}
+        %input.submit-btn{type: 'submit', value: 'Send',name: 'commit'}
+
