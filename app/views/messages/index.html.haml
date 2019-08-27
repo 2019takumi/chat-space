@@ -4,14 +4,15 @@
   .chat-side
     .side-header
       .side-header__box
-        %p.side-header__box__user-name takumi
+        %p.side-header__box__user-name 
+          = current_user.name
         %ul.side-header__box__menu<
           %li.side-header__box__menu__new-group
             = link_to do
               = fa_icon 'edit'
           %li.side-header__box__menu__eidt-user
-            = link_to do
-              = fa_icon 'cog'
+            = link_to edit_user_path(current_user) do
+              = fa_icon 'cog', class: 'icon'
     .groups
       = link_to do
         .group
