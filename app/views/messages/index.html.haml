@@ -14,19 +14,12 @@
         .main-header__edit-btn Edit
 
     .messages
-      .message
-        .message__upper-info
-          %p.message__upper-info__talker takumi
-          %p.message__upper-info__date 2019/08/23(Fri)14:02:06
-        %p.message__text test
+      = render @messages
     .form
-      %form.new_message#new_message{action: '/',method: 'get'}
-        %input{:type=>"hidden"}
-        %input{:type=>"hidden"}
+      = form_for [@group, @message] do |f|
         .input-box
-          %input.input-box__text#message_content{placeholder: 'type a message',type: 'text',name: 'message[content]'}
-          %label.input-box__image{for: 'message_image'}
-            %i.fa.fa-image
-            %input.input-box__image__file{type: 'file',name: 'message[image]'}
-        %input.submit-btn{type: 'submit', value: 'Send',name: 'commit'}
-
+          = f.text_field :content, class: 'input-box__text', placeholder: 'type a message'
+          = f.label :image, class: 'input-box__image' do
+            = fa_icon 'image' ,class: 'imag_icon'
+            = f.file_field :image, class: 'input-box__image__file'
+        = f.submit 'Send', class: 'submit-btn'
