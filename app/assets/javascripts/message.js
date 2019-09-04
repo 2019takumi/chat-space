@@ -1,27 +1,8 @@
 $(function(){
   function buildHTML(message){
-      if( message.image ) {
-        var html = 
-          `<div class="message" data-message-id=${message.id}>
-            <div class="message__upper-info">
-              <p class="message__upper-info__talker">
-                ${message.user_name}
-              </p>
-              <p class="message__upper-info__date">
-                ${message.date}
-              </p>
-            </div>
-            <div class="lower-message">
-              <p class="lower-message__content">
-                ${message.content}
-              </p>
-            </div>
-            <asset_path src=${message.image} >
-          </div>`
-        return html;
-      } else {
-        var html = 
-        `<div class="message" data-message-id=${message.id}>
+    var messageimage = (message.image != null) ? message.image : "";
+    var html = 
+      `<div class="message" data-message-id=${message.id}>
         <div class="message__upper-info">
           <p class="message__upper-info__talker">
             ${message.user_name}
@@ -35,9 +16,9 @@ $(function(){
             ${message.content}
           </p>
         </div>
+        <img src=${messageimage}>
       </div>`
-        return html;
-      }
+      return html;
     }
   $('.new_message').on('submit', function(e){
     e.preventDefault();
