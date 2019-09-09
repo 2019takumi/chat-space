@@ -86,6 +86,9 @@ a{
         display: flex;
         font-size: 12px;
         color: $usernameColor;
+        li{
+          margin-left: 10px;
+        }
       }
     }
     &__edit-btn{
